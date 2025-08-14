@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shamhan - Award Winning Restaurant Group</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: #0a0a0a;
+      min-height: 100vh;
+      color: #fff;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .geometric-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .geometric-shape {
+      position: absolute;
+      border-radius: 15px;
+    }
+
+    /* Gold filled shapes */
+    .shape-1 {
+      background: linear-gradient(135deg, #D4AF37, #F7DC6F, #B8860B);
+      width: 180px;
+      height: 100px;
+      top: 100px;
+      left: 15%;
+    }
+
+    .shape-2 {
+      background: linear-gradient(135deg, #D4AF37, #F7DC6F, #B8860B);
+      width: 170px;
+      height: 110px;
+      top: 35%;
+      left: 8%;
+    }
+
+    .shape-3 {
+      background: linear-gradient(135deg, #D4AF37, #F7DC6F, #B8860B);
+      width: 200px;
+      height: 140px;
+      top: 30%;
+      right: 20%;
+    }
+
+    .shape-4 {
+      background: linear-gradient(135deg, #D4AF37, #F7DC6F, #B8860B);
+      width: 120px;
+      height: 70px;
+      bottom: 25%;
+      left: 35%;
+    }
+
+    .shape-5 {
+      background: linear-gradient(135deg, #D4AF37, #F7DC6F, #B8860B);
+      width: 160px;
+      height: 90px;
+      top: 15%;
+      right: 15%;
+    }
+
+    .shape-6 {
+      background: linear-gradient(135deg, #D4AF37, #F7DC6F, #B8860B);
+      width: 140px;
+      height: 85px;
+      bottom: 15%;
+      right: 10%;
+    }
+
+    /* Gold outlined shapes */
+    .shape-outline-1 {
+      border: 2px solid #D4AF37;
+      background: transparent;
+      width: 200px;
+      height: 120px;
+      top: 150px;
+      left: 3%;
+    }
+
+    .shape-outline-2 {
+      border: 2px solid #D4AF37;
+      background: transparent;
+      width: 220px;
+      height: 130px;
+      top: 5%;
+      right: 35%;
+    }
+
+    .shape-outline-3 {
+      border: 2px solid #D4AF37;
+      background: transparent;
+      width: 190px;
+      height: 100px;
+      top: 45%;
+      left: 25%;
+    }
+
+    .shape-outline-4 {
+      border: 2px solid #D4AF37;
+      background: transparent;
+      width: 150px;
+      height: 80px;
+      bottom: 35%;
+      left: 15%;
+    }
+
+    .shape-outline-5 {
+      border: 2px solid #D4AF37;
+      background: transparent;
+      width: 200px;
+      height: 110px;
+      bottom: 10%;
+      right: 35%;
+    }
+
+    @media (max-width: 768px) {
+      .geometric-shape {
+        transform: scale(0.6);
+      }
+    }
+
+    /* Navigation Styles */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-section img {
+      height: 2.5rem;
+      width: auto;
+    }
+
+    /* Desktop Navigation */
+    .nav-menu {
+      display: none;
+      gap: 2rem;
+    }
+
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: #D4AF37;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.7rem 1.5rem;
+      border: 2px solid #D4AF37;
+      background: transparent;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #D4AF37;
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: #D4AF37;
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: #D4AF37;
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      width: 25px;
+      height: 18px;
+      justify-content: space-between;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: #fff;
+      border-radius: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle.active .hamburger span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .menu-toggle.active .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active .hamburger span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobile Menu Overlay */
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(76, 95, 70, 0.98);
+      backdrop-filter: blur(15px);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .mobile-menu-overlay.active {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .mobile-nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav-links a:hover {
+      color: #D4AF37;
+      padding-left: 1rem;
+    }
+
+    .mobile-nav-links a:last-child {
+      border-bottom: none;
+    }
+
+    /* Desktop Layout */
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      .nav-menu {
+        display: flex;
+      }
+
+      .action-buttons {
+        gap: 1rem;
+      }
+    }
+
+    /* Mobile Layout */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .action-buttons {
+        gap: 0.5rem;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .action-buttons.hidden {
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+      }
+
+      .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    .gold-text {
+      color: #D4AF37;
+    }
+
+    .gold-bg {
+      background: linear-gradient(135deg, #D4AF37, #F7DC6F, #B8860B);
+    }
+
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    /* Hover effect for images */
+    section img {
+      transition: transform 0.5s ease;
+    }
+
+    section .rounded-lg:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Shadow effects */
+    .shadow-2xl {
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
+    .gold-border {
+      border-color: #D4AF37;
+    }
+
+    .section-bg {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .hero-text {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-spin-slow {
+      animation: spin-slow 20s linear infinite;
+    }
+
+    /* Hover effects for images */
+    .group:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Gradient text effect */
+    .gradient-text {
+      background: linear-gradient(135deg, #D4AF37, #F7DC6F, #B8860B);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+
+<body class="text-white">
+  <!-- Geometric Background -->
+  <div class="geometric-bg">
+    <div class="geometric-shape shape-1"></div>
+    <div class="geometric-shape shape-2"></div>
+    <div class="geometric-shape shape-3"></div>
+    <div class="geometric-shape shape-4"></div>
+    <div class="geometric-shape shape-5"></div>
+    <div class="geometric-shape shape-6"></div>
+    <div class="geometric-shape shape-outline-1"></div>
+    <div class="geometric-shape shape-outline-2"></div>
+    <div class="geometric-shape shape-outline-3"></div>
+    <div class="geometric-shape shape-outline-4"></div>
+    <div class="geometric-shape shape-outline-5"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-header">
+        <!-- Logo -->
+        <div class="logo-section">
+          <a href="index.html">
+            <img src="./assets/Calcutta Logo-1.png" alt="Shamhan Logo">
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menuToggle">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Desktop Navigation Menu -->
+      <div class="nav-menu">
+        <a href="about.html">About Us</a>
+        <a href="#">Restaurants</a>
+        <a href="#">Weddings & Events</a>
+        <a href="./voucer.html">Gift Vouchers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <!-- Action Buttons (Always Visible) -->
+      <div class="action-buttons" id="actionButtons">
+        <button class="btn">Book Now</button>
+        <button class="btn btn-primary">Order Online</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-nav-links">
+      <a href="about.html">About Us</a>
+      <a href="#">Restaurants</a>
+      <a href="#">Weddings & Events</a>
+      <a href="./voucer.html">Gift Vouchers</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <section class="min-h-screen flex items-center justify-center relative overflow-hidden" style="margin-top: 80px;">
+    <!-- Video Background -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+      <iframe
+        class="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2"
+        src="https://www.youtube.com/embed/xPPLbEFbCAo?autoplay=1&mute=1&loop=1&playlist=xPPLbEFbCAo&controls=0&modestbranding=1&showinfo=0"
+        title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; encrypted-media"
+        allowfullscreen></iframe>
+    </div>
+
+    <!-- Video Overlay -->
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 z-10"></div>
+
+    <!-- Content -->
+    <div class="container mx-auto px-4 text-center relative z-20">
+      <h1 class="hero-text text-5xl md:text-7xl font-bold mb-4">The Celebrated and Award Winning</h1>
+      <h2 class="hero-subtitle text-2xl md:text-3xl gold-text mb-4">Shamhan Group</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">The Jewel of the South-East England</p>
+      <button class="px-8 py-4 gold-bg text-black rounded-lg text-lg font-semibold hover:opacity-90 transition-opacity">
+        WHAT'S ON - SHAMHAN LIFE
+      </button>
+
+      <!-- Scroll Down Arrow -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 section-bg">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-lg leading-relaxed mb-12">
+          A group of four extraordinary restaurants, Shamhan Welling and Westerham along with our new ventures have
+          achieved excellence year on year, continually setting new marks at the outstanding culinary landscape both
+          locally and across the wider reaching markets of central and historical London.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="card-hover">
+            <img src="./assets/alice-y4eF4JOCZvw-unsplash.jpg"
+              alt="Restaurant Interior" class="w-full h-48 object-cover rounded-lg mb-4">
+          </div>
+          <div class="card-hover">
+            <img src="./assets/andres-rodriguez-So4EHYeShUM-unsplash.jpg"
+              alt="Restaurant Dining" class="w-full h-48 object-cover rounded-lg mb-4">
+          </div>
+          <div class="card-hover">
+            <img src="./assets/aviv-rachmadian-0WBw8AnR_dk-unsplash.jpg" alt="Gourmet Dish"
+              class="w-full h-48 object-cover rounded-lg mb-4">
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <p class="text-lg italic gold-text">"Shamhan wonders believe every successful food sticks a slightly sardonic
+            bowl which can only add to its appeal."</p>
+          <p class="mt-4">"Best Restaurant London - Dine & Sandwich"</p>
+          <p class="gold-text">Evening Standard</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Restaurants Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 gold-text">DISCOVER OUR RESTAURANTS</h2>
+
+      <div class="flex justify-center">
+        <!-- Single Restaurant - Unique Design -->
+        <div class="relative group max-w-md">
+          <div
+            class="bg-gradient-to-tr from-gray-900 via-gray-800 to-black p-8 rounded-3xl border-2 border-yellow-400 transform rotate-3 hover:rotate-0 transition-transform duration-700 hover:shadow-2xl hover:shadow-yellow-400/30">
+            <div class="transform -rotate-3 group-hover:rotate-0 transition-transform duration-700">
+              <div class="relative mb-6">
+                <img src="./assets/cera-muV_8wy4mzw-unsplash.jpg"
+                  alt="Shamhan Restaurant" class="w-full h-48 object-cover rounded-2xl border-2 border-yellow-300">
+                <div
+                  class="absolute -top-3 -right-3 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                  <span class="text-black font-bold text-lg">★</span>
+                </div>
+              </div>
+              <div class="text-center">
+                <div class="gold-text text-3xl font-bold mb-2">SHAMHAN</div>
+                <div class="text-yellow-300 text-xl mb-4 font-semibold">RESTAURANT</div>
+                <p class="mb-6 text-gray-300 italic leading-relaxed">Contemporary food and drink with a relaxed ambience
+                </p>
+                <div class="space-y-1 text-sm mb-6 text-gray-400">
+                  <p>Monday - Thursday: 12pm - 9pm</p>
+                  <p>Friday - Saturday: 12pm - 10pm</p>
+                  <p>Sunday: 12pm - 8pm</p>
+                </div>
+                <button
+                  class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-3 rounded-full font-bold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105">BOOK
+                  NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Section -->
+  <section class="py-20 section-bg">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 gold-text">EXCEPTIONAL DINING EXPERIENCES</h2>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Culinary Excellence -->
+        <div
+          class="text-center p-8 rounded-lg bg-gradient-to-b from-transparent to-black/50 border gold-border card-hover">
+          <div class="w-16 h-16 mx-auto mb-4 gold-bg rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+            </svg>
+          </div>
+          <h3 class="gold-text text-xl font-bold mb-3">CULINARY MASTERY</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Our master chefs craft each dish with precision, blending traditional techniques with innovative flavors to
+            create unforgettable culinary journeys
+          </p>
+        </div>
+
+        <!-- Ambiance & Service -->
+        <div
+          class="text-center p-8 rounded-lg bg-gradient-to-b from-transparent to-black/50 border gold-border card-hover">
+          <div class="w-16 h-16 mx-auto mb-4 gold-bg rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+          <h3 class="gold-text text-xl font-bold mb-3">UNMATCHED AMBIANCE</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Sophisticated interiors meet warm hospitality, creating the perfect atmosphere for intimate dinners,
+            celebrations, and memorable gatherings
+          </p>
+        </div>
+
+        <!-- Premium Ingredients -->
+        <div
+          class="text-center p-8 rounded-lg bg-gradient-to-b from-transparent to-black/50 border gold-border card-hover">
+          <div class="w-16 h-16 mx-auto mb-4 gold-bg rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm2.5 6L12 10.5 9.5 8 11 6.5l1 1 2.5-2.5L16 6.5 14.5 8zm-5 9h-2v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z" />
+            </svg>
+          </div>
+          <h3 class="gold-text text-xl font-bold mb-3">FINEST INGREDIENTS</h3>
+          <p class="text-gray-300 leading-relaxed">
+            Sourced from trusted local suppliers and international markets, ensuring every plate delivers authentic
+            flavors and exceptional quality
+          </p>
+        </div>
+      </div>
+
+      <!-- Additional Excellence Points -->
+      <div class="mt-16 max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 gold-bg rounded-full flex items-center justify-center">
+                <span class="text-black font-bold text-lg">✓</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="gold-text font-bold mb-2">PERSONALIZED SERVICE</h4>
+              <p class="text-gray-300">Attentive staff dedicated to creating bespoke dining experiences tailored to your
+                preferences</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 gold-bg rounded-full flex items-center justify-center">
+                <span class="text-black font-bold text-lg">✓</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="gold-text font-bold mb-2">SEASONAL MENUS</h4>
+              <p class="text-gray-300">Constantly evolving offerings that celebrate the finest seasonal produce and
+                culinary trends</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 gold-bg rounded-full flex items-center justify-center">
+                <span class="text-black font-bold text-lg">✓</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="gold-text font-bold mb-2">WINE EXCELLENCE</h4>
+              <p class="text-gray-300">Curated wine selection from renowned vineyards, perfectly paired with our
+                culinary creations</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 gold-bg rounded-full flex items-center justify-center">
+                <span class="text-black font-bold text-lg">✓</span>
+              </div>
+            </div>
+            <div>
+              <h4 class="gold-text font-bold mb-2">COMMUNITY HERITAGE</h4>
+              <p class="text-gray-300">Over two decades of serving South-East England with passion, innovation, and
+                dedication</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial/Quote -->
+      <div class="mt-16 text-center max-w-3xl mx-auto">
+        <div class="border-t border-b gold-border py-8">
+          <p class="text-xl italic gold-text mb-4">"Where culinary artistry meets exceptional hospitality"</p>
+          <p class="text-lg">Experience the difference that passion, quality, and attention to detail make</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food & Drinks Section -->
+  <!-- Food & Drinks Section - Unique Design -->
+  <section class="py-20 relative overflow-hidden"
+    style="background: linear-gradient(135deg, #0a0a0a 0%, #024241 50%, #0a0a0a 100%);">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-20 left-10 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl animate-pulse"
+        style="animation-delay: 2s;"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <!-- Section Title -->
+      <div class="text-center mb-20">
+        <h2 class="text-5xl md:text-6xl font-bold mb-4">
+          <span class="gold-text">TASTE</span>
+          <span class="text-white mx-3">&</span>
+          <span class="gold-text">INDULGE</span>
+        </h2>
+        <div class="w-32 h-1 gold-bg mx-auto"></div>
+      </div>
+
+      <!-- Food Section - Left Diagonal -->
+      <div class="relative mb-24">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <!-- Food Images - Creative Overlap -->
+          <div class="relative h-[500px] order-2 md:order-1">
+            <div
+              class="absolute top-0 left-0 w-64 h-64 overflow-hidden rounded-3xl rotate-6 hover:rotate-0 transition-transform duration-700 z-10">
+              <img src="./assets/michele-blackwell-rAyCBQTH7ws-unsplash.jpg"
+                alt="Gourmet Food" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            </div>
+            <div
+              class="absolute top-32 right-0 w-72 h-72 overflow-hidden rounded-3xl -rotate-3 hover:rotate-0 transition-transform duration-700 z-20">
+              <img src="./assets/orijit-chatterjee-wEBg_pYtynw-unsplash.jpg"
+                alt="Fine Dining" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            </div>
+            <div
+              class="absolute bottom-0 left-16 w-56 h-56 overflow-hidden rounded-full border-4 border-yellow-400 z-30">
+              <img src="./assets/rich-soul-1pPZFBwbleo-unsplash.jpg"
+                alt="Signature Dish"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+            </div>
+            <!-- Decorative Elements -->
+            <div class="absolute top-16 right-32 w-20 h-20 border-2 border-yellow-400 rounded-full animate-spin-slow">
+            </div>
+            <div class="absolute bottom-20 left-0 w-32 h-32 border-2 border-yellow-400/30 rounded-3xl rotate-45"></div>
+          </div>
+
+          <!-- Food Content -->
+          <div class="order-1 md:order-2">
+            <div class="relative">
+              <div class="absolute -top-8 -left-8 text-[120px] font-bold text-yellow-400/10">01</div>
+              <div
+                class="relative bg-black/70 backdrop-blur-sm p-10 rounded-3xl border-l-4 border-yellow-400 hover:border-l-8 transition-all duration-500">
+                <h3 class="text-4xl font-bold mb-6 gold-text">OUR FOOD</h3>
+                <div class="w-20 h-1 bg-yellow-400 mb-6"></div>
+                <p class="text-lg leading-relaxed mb-6 text-gray-300">
+                  Shamhan strives to deliver both quality food and value. At Shamhan, every one of our restaurants
+                  offers fresh, diverse and delicious food. Our chefs have created contemporary menu offerings from
+                  traditional favourites.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-300 mb-8">
+                  From award-winning beef to sophisticated starters, all of our chefs understand the true core of good
+                  cooking and creative flair in both preparation and execution.
+                </p>
+                <button
+                  class="px-6 py-3 gold-bg text-black rounded-full font-bold hover:scale-105 transition-transform">
+                  VIEW MENU →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative Divider -->
+      <div class="flex items-center justify-center my-16">
+        <div class="h-px bg-yellow-400/30 flex-1"></div>
+        <div class="mx-8">
+          <div class="w-16 h-16 gold-bg rounded-full flex items-center justify-center rotate-45">
+            <span class="text-black text-2xl -rotate-45">✦</span>
+          </div>
+        </div>
+        <div class="h-px bg-yellow-400/30 flex-1"></div>
+      </div>
+
+      <!-- Drinks Section - Right Diagonal -->
+      <div class="relative">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <!-- Drinks Content -->
+          <div>
+            <div class="relative">
+              <div class="absolute -top-8 -right-8 text-[120px] font-bold text-yellow-400/10">02</div>
+              <div
+                class="relative bg-black/70 backdrop-blur-sm p-10 rounded-3xl border-r-4 border-yellow-400 hover:border-r-8 transition-all duration-500">
+                <h3 class="text-4xl font-bold mb-6 gold-text">OUR DRINKS</h3>
+                <div class="w-20 h-1 bg-yellow-400 mb-6"></div>
+                <p class="text-lg leading-relaxed mb-6 text-gray-300">
+                  Shamhan excels in providing an extensive drinks list. Behind every great dish is the perfect drink to
+                  accompany it. We have been sourcing and serving the best wines from around the world.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-300 mb-8">
+                  Our cocktail menu is refreshingly vibrant and contemporary. All cocktails are prepared with passion
+                  using the finest spirits and freshest ingredients available.
+                </p>
+                <button
+                  class="px-6 py-3 gold-bg text-black rounded-full font-bold hover:scale-105 transition-transform">
+                  WINE LIST →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Drinks Images - Creative Overlap -->
+          <div class="relative h-[500px]">
+            <div
+              class="absolute top-0 right-0 w-64 h-64 overflow-hidden rounded-3xl -rotate-6 hover:rotate-0 transition-transform duration-700 z-10">
+              <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=400&fit=crop"
+                alt="Cocktails" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            </div>
+            <div
+              class="absolute top-32 left-0 w-72 h-72 overflow-hidden rounded-3xl rotate-3 hover:rotate-0 transition-transform duration-700 z-20">
+              <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&h=400&fit=crop"
+                alt="Wine Selection"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            </div>
+            <div
+              class="absolute bottom-0 right-16 w-56 h-56 overflow-hidden rounded-full border-4 border-yellow-400 z-30">
+              <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=300&h=300&fit=crop"
+                alt="Signature Cocktail"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+            </div>
+            <!-- Decorative Elements -->
+            <div class="absolute top-16 left-32 w-20 h-20 border-2 border-yellow-400 rounded-full animate-spin-slow">
+            </div>
+            <div class="absolute bottom-20 right-0 w-32 h-32 border-2 border-yellow-400/30 rounded-3xl rotate-45"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="py-20" style=" background: linear-gradient(135deg, #0a0a0a 0%, #024241 50%, #0a0a0a 100%)">
+    <div class="container mx-auto px-4">
+      <!-- Section Title -->
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-bold text-black">EVENTS</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <!-- Left: Food Image -->
+        <div class="relative">
+          <div class="rounded-lg overflow-hidden shadow-2xl">
+            <img src="./assets/steptodown.com904625.jpg"
+              alt="Event Catering" class="w-full h-[400px] md:h-[500px] object-cover">
+          </div>
+          <!-- Decorative element -->
+          <div class="absolute -bottom-4 -right-4 w-32 h-32 gold-bg opacity-20 rounded-full blur-2xl"></div>
+          <div class="absolute -top-4 -left-4 w-24 h-24 gold-bg opacity-15 rounded-full blur-xl"></div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="relative">
+          <div class="text-gray-800">
+            <p class="text-lg leading-relaxed mb-6 text-white">
+              From birthday parties to business meetings, baby showers to wedding meals, The Shamhan Group is the ideal
+              venue for your event or celebration. Our mix of classic and contemporary styling provides a range of
+              spaces to suit any occasion.
+            </p>
+            <p class="text-lg leading-relaxed mb-6 text-white">
+              Whether you want to book out our private dining room for a meeting or hire out the whole venue for your
+              dream wedding, our dedicated team are on hand every step of the way to guide you through your planning.
+            </p>
+            <div class="mt-8">
+              <button
+                class="px-8 py-3 gold-bg text-black rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-lg">
+                ENQUIRE NOW
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weddings Section -->
+  <section class="py-20" style=" background: linear-gradient(135deg, #0a0a0a 0%, #024241 50%, #0a0a0a 100%)">
+    <div class="container mx-auto px-4">
+      <!-- Section Title -->
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-bold text-black">WEDDINGS</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <!-- Left: Content -->
+        <div class="relative order-2 md:order-1">
+          <div class="text-gray-800">
+            <p class="text-lg leading-relaxed mb-6 text-white">
+              The Shamhan Group provides an exclusive-use, luxurious wedding venue. Enjoy arrival drinks in the historic
+              bar area, before taking your guests through to the sophisticated restaurant for your wedding breakfast,
+              which can cater for up to 76.
+            </p>
+            <p class="text-lg leading-relaxed mb-6 text-white">
+              Come the evening, you may want to make use of our Josper Bar & Grill in our rear courtyard for an informal
+              BBQ for up to 120 guests. Once the day has drawn to a close, you can make use of our 10 boutique bedrooms
+              to avoid the hassle of organising transport.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <button
+                class="px-8 py-3 gold-bg text-black rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-lg">
+                WEDDING BROCHURE
+              </button>
+              <button
+                class="px-8 py-3 border-2 border-yellow-500 text-gray-800 rounded-lg font-semibold hover:bg-yellow-400 hover:text-black transition-all">
+                BOOK VIEWING
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Wedding Image -->
+        <div class="relative order-1 md:order-2">
+          <div class="rounded-lg overflow-hidden shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&h=500&fit=crop"
+              alt="Wedding Celebration" class="w-full h-[400px] md:h-[500px] object-cover">
+          </div>
+          <!-- Decorative element -->
+          <div class="absolute -bottom-4 -left-4 w-32 h-32 gold-bg opacity-20 rounded-full blur-2xl"></div>
+          <div class="absolute -top-4 -right-4 w-24 h-24 gold-bg opacity-15 rounded-full blur-xl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t gold-border" style="background: #0f1d22;">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8 items-start">
+        <!-- Logo Section -->
+        <div>
+          <div class="flex items-center mb-4">
+            <img src="./assets/Calcutta Logo-1.png" alt="Shamhan Logo" class="h-12 w-auto mr-3">
+          </div>
+        </div>
+
+        <!-- Restaurant Details -->
+        <div class="text-center">
+          <h3 class="text-xl font-bold gold-text mb-4">SHAMHAN BROMLEY</h3>
+          <div class="space-y-1 text-sm">
+            <p>38 Charlton Road</p>
+            <p>Charlton Village</p>
+            <p>Bromley, Kent</p>
+            <p>BR2 9QN</p>
+          </div>
+          <p class="gold-text mt-4 font-semibold">T: 020 8460 7169</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="flex justify-end">
+          <div class="flex space-x-3">
+            <a href="#"
+              class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="border-t gold-border mt-8 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center text-sm">
+          <div class="mb-4 md:mb-0">
+            <p>&copy;2024 Shamhan Group. All rights reserved.</p>
+            <p class="text-gray-400">Website by emerz</p>
+          </div>
+
+          <div class="flex space-x-4">
+            <a href="#" class="hover:gold-text transition-colors">Privacy Policy & Cookies</a>
+            <span class="text-gray-400">|</span>
+            <a href="#" class="hover:gold-text transition-colors">Terms and Conditions</a>
+            <span class="text-gray-400">|</span>
+            <a href="#" class="hover:gold-text transition-colors">Restaurant Policies</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const actionButtons = document.getElementById('actionButtons');
+
+    menuToggle.addEventListener('click', function() {
+      menuToggle.classList.toggle('active');
+      mobileMenuOverlay.classList.toggle('active');
+      
+      // Hide/show action buttons on mobile
+      if (window.innerWidth <= 768) {
+        actionButtons.classList.toggle('hidden');
+      }
+
+      // Haptic feedback
+      if (navigator.vibrate) {
+        navigator.vibrate(50);
+      }
+    });
+
+    // Close menu when clicking on a link (mobile)
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        menuToggle.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        
+        // Show action buttons again on mobile
+        if (window.innerWidth <= 768) {
+          actionButtons.classList.remove('hidden');
+        }
+      });
+    });
+
+    // Close menu when clicking outside content area
+    mobileMenuOverlay.addEventListener('click', function(e) {
+      if (e.target === mobileMenuOverlay) {
+        menuToggle.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        
+        // Show action buttons again on mobile
+        if (window.innerWidth <= 768) {
+          actionButtons.classList.remove('hidden');
+        }
+      }
+    });
+
+    // Button click handlers
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Visual feedback
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 150);
+        
+        // Action based on button text
+        if (this.textContent.includes('Book Now')) {
+          alert('Redirecting to booking system...');
+        } else if (this.textContent.includes('Order Online')) {
+          alert('Redirecting to online ordering...');
+        }
+      });
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        menuToggle.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        actionButtons.classList.remove('hidden');
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add scroll effect to navbar
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.navbar');
+      if (window.scrollY > 100) {
+        nav.style.background = 'rgba(0, 0, 0, 0.95)';
+      } else {
+        nav.style.background = 'rgba(0, 0, 0, 0.9)';
+      }
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all cards and images for animation
+    document.querySelectorAll('.card-hover, img').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+
+    // Add loading animation
+    window.addEventListener('load', () => {
+      document.body.style.opacity = '1';
+    });
+
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+  </script>
+</body>
+
+</html>
