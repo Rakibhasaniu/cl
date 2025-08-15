@@ -372,6 +372,70 @@
       background: rgba(0, 0, 0, 0.6);
     }
 
+    /* Video Background Styles */
+    .video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Hide video controls */
+    .video-bg::-webkit-media-controls {
+      display: none !important;
+    }
+
+    .video-bg::-webkit-media-controls-panel {
+      display: none !important;
+    }
+
+    .video-bg::-webkit-media-controls-play-button {
+      display: none !important;
+    }
+
+    .video-bg::-webkit-media-controls-start-playback-button {
+      display: none !important;
+    }
+
+    /* Mobile fallback */
+    .video-fallback {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('./assets/hero-fallback.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @media (max-width: 768px) {
+      .video-bg {
+        display: none;
+      }
+      
+      .video-fallback {
+        display: block;
+      }
+    }
+
     /* Hover effect for images */
     section img {
       transition: transform 0.5s ease;
@@ -490,8 +554,8 @@
       <!-- Desktop Navigation Menu -->
       <div class="nav-menu">
         <a href="about.html">About Us</a>
-        <a href="#">Restaurants</a>
-        <a href="#">Weddings & Events</a>
+        <a href="resturants.html">Restaurants</a>
+        <a href="weeding.html">Weddings & Events</a>
         <a href="./voucer.html">Gift Vouchers</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -508,21 +572,31 @@
   <div class="mobile-menu-overlay" id="mobileMenuOverlay">
     <div class="mobile-nav-links">
       <a href="about.html">About Us</a>
-      <a href="#">Restaurants</a>
-      <a href="#">Weddings & Events</a>
+      <a href="resturants.html">Restaurants</a>
+      <a href="weeding.html">Weddings & Events</a>
       <a href="./voucer.html">Gift Vouchers</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
 
+  <!-- Hero Section with Local Video -->
   <section class="min-h-screen flex items-center justify-center relative overflow-hidden" style="margin-top: 80px;">
     <!-- Video Background -->
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
-      <iframe
-        class="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2"
-        src="https://www.youtube.com/embed/xPPLbEFbCAo?autoplay=1&mute=1&loop=1&playlist=xPPLbEFbCAo&controls=0&modestbranding=1&showinfo=0"
-        title="YouTube video player" frameborder="0" allow="autoplay; fullscreen; encrypted-media"
-        allowfullscreen></iframe>
+    <div class="video-container">
+      <video 
+        class="video-bg" 
+        autoplay 
+        muted 
+        loop 
+        playsinline
+        preload="auto"
+        id="heroVideo">
+        <source src="./assets/3135926-hd_1920_1080_30fps.mp4" type="video/mp4">
+        <!-- <source src="./assets/hero-video.webm" type="video/webm"> -->
+        <!-- Fallback for browsers that don't support video -->
+      </video>
+      <!-- Mobile/Fallback background -->
+      <div class="video-fallback"></div>
     </div>
 
     <!-- Video Overlay -->
@@ -743,7 +817,6 @@
   </section>
 
   <!-- Food & Drinks Section -->
-  <!-- Food & Drinks Section - Unique Design -->
   <section class="py-20 relative overflow-hidden"
     style="background: linear-gradient(135deg, #0a0a0a 0%, #024241 50%, #0a0a0a 100%);">
     <!-- Animated Background Elements -->
@@ -1105,6 +1178,35 @@
         if (window.innerWidth <= 768) {
           actionButtons.classList.remove('hidden');
         }
+      }
+    });
+
+    // Video handling
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('heroVideo');
+      const isMobile = window.innerWidth <= 768;
+      
+      if (video) {
+        // Ensure video plays when loaded
+        video.addEventListener('loadeddata', function() {
+          video.play().catch(function(error) {
+            console.log('Video autoplay failed:', error);
+            // If autoplay fails, show fallback background
+            const fallback = document.querySelector('.video-fallback');
+            if (fallback) {
+              fallback.style.display = 'block';
+            }
+          });
+        });
+
+        // Handle video errors
+        video.addEventListener('error', function() {
+          console.log('Video failed to load');
+          const fallback = document.querySelector('.video-fallback');
+          if (fallback) {
+            fallback.style.display = 'block';
+          }
+        });
       }
     });
 
