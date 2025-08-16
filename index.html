@@ -40,7 +40,7 @@
 
     /* Gold filled shapes */
     .shape-1 {
-      background: linear-gradient(135deg, #a3855b, #F7DC6F, #B8860B);
+      background: linear-gradient(135deg, #a3855b, #F7DC6F, #d1a971);
       width: 180px;
       height: 100px;
       top: 100px;
@@ -48,7 +48,7 @@
     }
 
     .shape-2 {
-      background: linear-gradient(135deg, #a3855b, #F7DC6F, #B8860B);
+      background: linear-gradient(135deg, #a3855b, #F7DC6F, #d1a971);
       width: 170px;
       height: 110px;
       top: 35%;
@@ -56,7 +56,7 @@
     }
 
     .shape-3 {
-      background: linear-gradient(135deg, #a3855b, #F7DC6F, #B8860B);
+      background: linear-gradient(135deg, #a3855b, #F7DC6F, #d1a971);
       width: 200px;
       height: 140px;
       top: 30%;
@@ -366,7 +366,7 @@
     }
 
     .gold-bg {
-      background: linear-gradient(135deg, #d1a970, #F7DC6F, #B8860B);
+      background: linear-gradient(135deg, #d1a970, #F7DC6F, #d1a971);
     }
 
     .hero-overlay {
@@ -464,7 +464,7 @@
     }
 
     .section-bg {
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.4);
     }
 
     .card-hover {
@@ -507,10 +507,110 @@
 
     /* Gradient text effect */
     .gradient-text {
-      background: linear-gradient(135deg, #a3855b, #F7DC6F, #B8860B);
+      background: linear-gradient(135deg, #a3855b, #F7DC6F, #d1a971);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+    }
+    .footer-modern {
+      background: linear-gradient(135deg, #4c5f46 0%, #6b7b60 100%);
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-modern::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      
+    }
+
+    .footer-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+      margin: 1rem 0;
+    }
+
+    .footer-section h3 {
+      color: #d1a971;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-section p, .footer-section span {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #ffffff;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .social-icon:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .copyright-section {
+      /* background: rgba(0, 0, 0, 0.2); */
+      backdrop-filter: blur(10px);
+      text-align: center;
+      /* padding: 1.5rem 0; */
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+    }
+
+    
+    
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+
     }
   </style>
 </head>
@@ -653,7 +753,7 @@
   </section>
 
   <!-- Restaurants Section -->
-  <section class="py-20">
+  <section class="py-20  section-bg">
     <div class="container mx-auto px-4">
       <h2 class="text-4xl font-bold text-center mb-16 gold-text">DISCOVER OUR RESTAURANTS</h2>
 
@@ -661,19 +761,19 @@
         <!-- Single Restaurant - Unique Design -->
         <div class="relative group max-w-md">
           <div
-            class="bg-gradient-to-tr from-gray-900 via-gray-800 to-black p-8 rounded-3xl border-2 border-yellow-400 transform rotate-3 hover:rotate-0 transition-transform duration-700 hover:shadow-2xl hover:shadow-yellow-400/30">
+            class="bg-gradient-to-tr from-gray-900 via-gray-800 to-black p-8 rounded-3xl border-2 border-yellow-200 transform rotate-3 hover:rotate-0 transition-transform duration-700 hover:shadow-2xl hover:shadow-yellow-200/30">
             <div class="transform -rotate-3 group-hover:rotate-0 transition-transform duration-700">
               <div class="relative mb-6">
                 <img src="./assets/cera-muV_8wy4mzw-unsplash.jpg"
-                  alt="Shamhan Restaurant" class="w-full h-48 object-cover rounded-2xl border-2 border-yellow-300">
+                  alt="Shamhan Restaurant" class="w-full h-48 object-cover rounded-2xl border-2 border-yellow-200">
                 <div
-                  class="absolute -top-3 -right-3 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                  class="absolute -top-3 -right-3 w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center">
                   <span class="text-black font-bold text-lg">★</span>
                 </div>
               </div>
               <div class="text-center">
                 <div class="gold-text text-3xl font-bold mb-2">SHAMHAN</div>
-                <div class="text-yellow-300 text-xl mb-4 font-semibold">RESTAURANT</div>
+                <div class="text-yellow-200 text-xl mb-4 font-semibold">RESTAURANT</div>
                 <p class="mb-6 text-gray-300 italic leading-relaxed">Contemporary food and drink with a relaxed ambience
                 </p>
                 <div class="space-y-1 text-sm mb-6 text-gray-400">
@@ -682,8 +782,9 @@
                   <p>Sunday: 12pm - 8pm</p>
                 </div>
                 <button
-                  class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-3 rounded-full font-bold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105">BOOK
-                  NOW</button>
+                  class="px-8 py-3 gold-bg text-black rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-lg">
+                  BOOK NOW
+                </button>
               </div>
             </div>
           </div>
@@ -852,15 +953,15 @@
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </div>
             <div
-              class="absolute bottom-0 left-16 w-56 h-56 overflow-hidden rounded-full border-4 border-yellow-400 z-30">
+              class="absolute bottom-0 left-16 w-56 h-56 overflow-hidden rounded-full border-4 border-yellow-200 z-30">
               <img src="./assets/rich-soul-1pPZFBwbleo-unsplash.jpg"
                 alt="Signature Dish"
                 class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
             </div>
             <!-- Decorative Elements -->
-            <div class="absolute top-16 right-32 w-20 h-20 border-2 border-yellow-400 rounded-full animate-spin-slow">
+            <div class="absolute top-16 right-32 w-20 h-20 border-2 border-yellow-200 rounded-full animate-spin-slow">
             </div>
-            <div class="absolute bottom-20 left-0 w-32 h-32 border-2 border-yellow-400/30 rounded-3xl rotate-45"></div>
+            <div class="absolute bottom-20 left-0 w-32 h-32 border-2 border-yellow-200/30 rounded-3xl rotate-45"></div>
           </div>
 
           <!-- Food Content -->
@@ -868,9 +969,9 @@
             <div class="relative">
               <div class="absolute -top-8 -left-8 text-[120px] font-bold text-yellow-400/10">01</div>
               <div
-                class="relative bg-black/70 backdrop-blur-sm p-10 rounded-3xl border-l-4 border-yellow-400 hover:border-l-8 transition-all duration-500">
+                class="relative bg-black/70 backdrop-blur-sm p-10 rounded-3xl border-l-4 border-yellow-200 hover:border-l-8 transition-all duration-500">
                 <h3 class="text-4xl font-bold mb-6 gold-text">OUR FOOD</h3>
-                <div class="w-20 h-1 bg-yellow-400 mb-6"></div>
+                <div class="w-20 h-1 bg-yellow-200 mb-6"></div>
                 <p class="text-lg leading-relaxed mb-6 text-gray-300">
                   Shamhan strives to deliver both quality food and value. At Shamhan, every one of our restaurants
                   offers fresh, diverse and delicious food. Our chefs have created contemporary menu offerings from
@@ -909,9 +1010,9 @@
             <div class="relative">
               <div class="absolute -top-8 -right-8 text-[120px] font-bold text-yellow-400/10">02</div>
               <div
-                class="relative bg-black/70 backdrop-blur-sm p-10 rounded-3xl border-r-4 border-yellow-400 hover:border-r-8 transition-all duration-500">
+                class="relative bg-black/70 backdrop-blur-sm p-10 rounded-3xl border-r-4 border-yellow-200 hover:border-r-8 transition-all duration-500">
                 <h3 class="text-4xl font-bold mb-6 gold-text">OUR DRINKS</h3>
-                <div class="w-20 h-1 bg-yellow-400 mb-6"></div>
+                <div class="w-20 h-1 bg-yellow-200 mb-6"></div>
                 <p class="text-lg leading-relaxed mb-6 text-gray-300">
                   Shamhan excels in providing an extensive drinks list. Behind every great dish is the perfect drink to
                   accompany it. We have been sourcing and serving the best wines from around the world.
@@ -944,15 +1045,15 @@
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </div>
             <div
-              class="absolute bottom-0 right-16 w-56 h-56 overflow-hidden rounded-full border-4 border-yellow-400 z-30">
+              class="absolute bottom-0 right-16 w-56 h-56 overflow-hidden rounded-full border-4 border-yellow-200 z-30">
               <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=300&h=300&fit=crop"
                 alt="Signature Cocktail"
                 class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
             </div>
             <!-- Decorative Elements -->
-            <div class="absolute top-16 left-32 w-20 h-20 border-2 border-yellow-400 rounded-full animate-spin-slow">
+            <div class="absolute top-16 left-32 w-20 h-20 border-2 border-yellow-200 rounded-full animate-spin-slow">
             </div>
-            <div class="absolute bottom-20 right-0 w-32 h-32 border-2 border-yellow-400/30 rounded-3xl rotate-45"></div>
+            <div class="absolute bottom-20 right-0 w-32 h-32 border-2 border-yellow-200/30 rounded-3xl rotate-45"></div>
           </div>
         </div>
       </div>
@@ -961,10 +1062,10 @@
 
   <!-- Events Section -->
   <section class="py-20" style=" background: linear-gradient(135deg, #0a0a0a 0%, #024241 50%, #0a0a0a 100%)">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-2">
       <!-- Section Title -->
-      <div class="text-center mb-16">
-        <h2 class="text-5xl font-bold text-black">EVENTS</h2>
+      <div class="text-center mb-10">
+        <h2 class="text-5xl font-bold text-orange-300">EVENTS</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -1008,7 +1109,7 @@
     <div class="container mx-auto px-4">
       <!-- Section Title -->
       <div class="text-center mb-16">
-        <h2 class="text-5xl font-bold text-black">WEDDINGS</h2>
+        <h2 class="text-5xl font-bold text-orange-300">WEDDINGS</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -1031,7 +1132,7 @@
                 WEDDING BROCHURE
               </button>
               <button
-                class="px-8 py-3 border-2 border-yellow-500 text-gray-800 rounded-lg font-semibold hover:bg-yellow-400 hover:text-black transition-all">
+                class="px-8 py-3 gold-bg text-black rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-lg">
                 BOOK VIEWING
               </button>
             </div>
@@ -1053,82 +1154,83 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-12 border-t gold-border" style="background: #0f1d22;">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-8 items-start">
-        <!-- Logo Section -->
-        <div>
-          <div class="flex logo-section  items-center mb-4">
-            <img src="./assets/Calcutta Logo-1.png" alt="Shamhan Logo" class="h-12 w-auto mr-3">
+  <footer class="footer-modern" style="background: #0f1d22;">
+    <div class="footer-content">
+      <div class="container mx-auto pl-14 py-6">
+        <!-- Main Footer Content -->
+        <div class="footer-grid grid md:grid-cols-4 gap-8">
+          <!-- About Us Section -->
+          <div class="footer-section">
+            <h3>About Us</h3>
+            <p>Our restaurant is located in the heart of the city, offering a unique dining experience.</p>
+            
+            <div class="mt-6">
+              <h4 class="text-white font-semibold mb-3">Our Social Media</h4>
+              <div class="social-icons">
+                <a href="#" class="social-icon">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+                <a href="#" class="social-icon">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                </a>
+                <a href="#" class="social-icon">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <!-- Restaurant Details -->
-        <div class="text-center">
-          <h3 class="text-xl font-bold gold-text mb-4">SHAMHAN BROMLEY</h3>
-          <div class="space-y-1 text-sm">
-            <p>38 Charlton Road</p>
+          <!-- Our Location Section -->
+          <div class="footer-section">
+            <h3>Our Location</h3>
+            <p>A: 38 Charlton Road, Park Road,</p>
             <p>Charlton Village</p>
-            <p>Bromley, Kent</p>
-            <p>BR2 9QN</p>
+            <p>Bromley, Kent BR2 9QN</p>
+            <div class="mt-4">
+              <p>P: 020 8460 7169</p>
+              <p>E: <a href="mailto:info@shamhan.com">info@shamhan.com</a></p>
+            </div>
           </div>
-          <p class="gold-text mt-4 font-semibold">T: 020 8460 7169</p>
+
+          <!-- Terms and Conditions Section -->
+          <div class="footer-section">
+            <h3>Terms and Conditions</h3>
+            <div class="space-y-2">
+              <p><a href="#">Privacy Policy</a></p>
+              <p><a href="#">Find us on</a></p>
+              <p><a href="#">Restaurant Policies</a></p>
+              <p><a href="#">Terms & Conditions</a></p>
+            </div>
+          </div>
+
+          <!-- Open Hours Section -->
+          <div class="footer-section">
+            <h3>Open Hours</h3>
+            <div class="space-y-1">
+              <p>Mon-Sat: 12pm-11pm</p>
+              <p>Sunday: 12pm - 9pm</p>
+              <p>Saturday: 12pm - 11pm</p>
+            </div>
+          </div>
         </div>
 
-        <!-- Social Media -->
-        <div class="flex justify-end">
-          <div class="flex space-x-3">
-            <a href="#"
-              class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
-              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-              </svg>
-            </a>
-            <a href="#"
-              class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
-              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-            </a>
-            <a href="#"
-              class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
-              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-            </a>
-            <a href="#"
-              class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
-              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
+        <!-- Footer Divider -->
+        <div class="footer-divider"></div>
 
-      <!-- Bottom Section -->
-      <div class="border-t gold-border mt-8 pt-8">
-        <div class="flex flex-col md:flex-row justify-between items-center text-sm">
-          <div class="mb-4 md:mb-0">
-            <p>&copy;2024 Shamhan Group. All rights reserved.</p>
-            <p class="text-gray-400">Website by emerz</p>
-          </div>
-
-          <div class="flex space-x-4">
-            <a href="#" class="hover:gold-text transition-colors">Privacy Policy & Cookies</a>
-            <span class="text-gray-400">|</span>
-            <a href="#" class="hover:gold-text transition-colors">Terms and Conditions</a>
-            <span class="text-gray-400">|</span>
-            <a href="#" class="hover:gold-text transition-colors">Restaurant Policies</a>
-          </div>
+        <!-- Copyright Section -->
+        <div class="copyright-section">
+          <p>Copyright © 2025 Shamhan Restaurant</p>
         </div>
       </div>
     </div>
   </footer>
+
   <script>
     // Navigation functionality
     const menuToggle = document.getElementById('menuToggle');
