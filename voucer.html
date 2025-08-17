@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gift Vouchers - Shamhan Restaurant</title>
+  <title>Gift Vouchers - Calcutta Fine Indian Dine Restaurant</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     * {
@@ -15,7 +15,7 @@
 
     body {
       background: #0f1d22;
-      font-family: 'Georgia', serif;
+      font-family: sans-serif;
       color: white;
     }
 
@@ -363,7 +363,7 @@
 
     .footer-section p, .footer-section span {
       color: rgba(255, 255, 255, 0.9);
-      font-size: 0.95rem;
+      font-size: 0.90rem;
       line-height: 1.5;
       margin-bottom: 0.5rem;
     }
@@ -602,7 +602,7 @@
         <!-- Logo -->
         <div class="logo-section">
           <a href="index.html">
-            <img src="./assets/Calcutta Logo-1.png" alt="Shamhan Logo">
+            <img src="./assets/Calcutta Logo-1.png" alt="Calcutta Logo">
           </a>
         </div>
 
@@ -658,7 +658,7 @@
           <div class="corner-ornament corner-bottom-right"></div>
 
           <div class="w-full h-48 md:h-96 relative overflow-hidden rounded-lg">
-            <img class="w-full h-full object-cover" src="./assets/Gift-Card.jpg" alt="Shamhan Gift Card">
+            <img class="w-full h-full object-cover" src="./assets/Gift-Card-2.jpg" alt="Calcutta Gift Card">
           </div>
         </div>
 
@@ -712,9 +712,9 @@
               <img src="./assets/steptodown.com361514.jpg"
                 alt="Restaurant Interior" class="w-full h-36 md:h-48 object-cover">
               <div class="p-4 md:p-6 text-gray-800">
-                <h3 class="text-lg md:text-xl font-bold mb-2" style="color: #a3855b;">Shamhan Gift Voucher</h3>
+                <h3 class="text-lg md:text-xl font-bold mb-2" style="color: #a3855b;">Calcutta Fine Indian Dine Gift Voucher</h3>
                 <p class="text-xs md:text-sm mb-3 md:mb-4">
-                  Leave all the options open and send a Shamhan voucher. Choose an amount and buy your gift today. 
+                  Leave all the options open and send a Calcutta Fine Indian Dine voucher. Choose an amount and buy your gift today. 
                   Perfect for any celebration or special occasion.
                 </p>
                 
@@ -723,11 +723,11 @@
 
                 <!-- Three Button Row -->
                 <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 voucher-buttons">
-                  <button class="flex-1 bg-gray-200 text-gray-600 py-2 px-3 md:px-4 rounded text-xs md:text-sm hover:bg-gray-300 transition-colors" id="detailsBtn">DETAILS</button>
+                  <button class="flex-1 bg-gray-200  py-2 px-3 md:px-4 rounded text-xs md:text-sm hover:bg-gray-300 transition-colors" id="detailsBtn">DETAILS</button>
                   
                   <!-- Price Dropdown Button -->
                   <div class="relative">
-                    <select id="voucherPrice" class="w-full py-2 px-3 md:px-4 rounded text-xs md:text-sm font-medium cursor-pointer border-0 text-black text-center" style="color: black; appearance: none;">
+                    <select id="voucherPrice" class="w-full bg-gray-200 py-2 px-3 md:px-4 rounded text-xs md:text-sm font-medium cursor-pointer border-0 text-black text-center" style="color: black; appearance: none;">
                       <option value="25">£25</option>
                       <option value="50">£50</option>
                       <option value="60" selected>£60</option>
@@ -779,7 +779,7 @@
             <p>Bromley, Kent BR2 9QN</p>
             <div class="mt-4">
               <p>P: 020 8460 7169</p>
-              <p>E: <a href="mailto:info@shamhan.com">info@shamhan.com</a></p>
+              <p>E: <a href="mailto:info@calcutta.com">info@calcuttafineindiandine.com</a></p>
             </div>
           </div>
 
@@ -832,7 +832,7 @@
 
         <!-- Copyright Section -->
         <div class="copyright-section">
-          <p>Copyright © 2025 Shamhan Restaurant</p>
+          <p>Copyright © 2025 Calcutta Fine Indian Dine Restaurant</p>
         </div>
       </div>
     </div>
@@ -933,31 +933,9 @@
     // Initialize with default selected value
     selectedPriceDisplay.textContent = `£${priceDropdown.value}`;
 
-    // Voucher purchase functionality
-    buyNowBtn.addEventListener('click', function() {
-      const selectedAmount = priceDropdown.value;
-      const originalText = this.textContent;
-      
-      this.textContent = 'PROCESSING...';
-      this.style.background = '#22c55e';
-      this.disabled = true;
 
-      setTimeout(() => {
-        this.textContent = 'PURCHASED!';
-        setTimeout(() => {
-          this.textContent = originalText;
-          this.style.background = '#a3855b';
-          this.disabled = false;
-          alert(`Gift voucher for £${selectedAmount} has been added to your cart!`);
-        }, 2000);
-      }, 1500);
-    });
 
-    // Details button functionality
-    detailsBtn.addEventListener('click', function() {
-      const selectedAmount = priceDropdown.value;
-      alert(`Voucher Details:\n\n• Amount: £${selectedAmount}\n• Valid for 12 months from purchase date\n• Can be used for dining at any Shamhan Restaurant location\n• Cannot be exchanged for cash\n• Perfect for any dining experience\n• Digital delivery available`);
-    });
+   
 
     // Add scroll effect to navbar
     window.addEventListener('scroll', () => {
