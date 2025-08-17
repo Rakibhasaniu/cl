@@ -725,7 +725,7 @@
     <!-- Content -->
     <div class="container mx-auto px-4 text-center relative z-20">
       <h1 class="hero-text text-5xl md:text-7xl font-bold mb-4">The Celebrated and Award Winning</h1>
-      <h2 class="hero-subtitle text-2xl md:text-3xl gold-text mb-4">Calcutta Fine Indian Dine</h2>
+      <h2 class="hero-subtitle text-white text-2xl md:text-3xl gold-text mb-4">Calcutta Fine Indian Dine</h2>
       <p class="text-lg mb-8 max-w-2xl mx-auto">The Jewel of the South-East England</p>
       <button class="px-8 py-4 gold-bg text-black rounded-lg text-lg font-semibold hover:opacity-90 transition-opacity">
         WHAT'S ON - Calcutta Fine Indian Dine LIFE
@@ -985,7 +985,7 @@
           <!-- Food Content -->
           <div class="order-1 md:order-2">
             <div class="relative">
-              <div class="absolute -top-8 -left-8 text-[120px] font-bold text-yellow-400/10">01</div>
+              <div class="absolute -top-8 -left-8 text-[120px] font-bold text-orange-300/10">01</div>
               <div
                 class="relative bg-black/70 backdrop-blur-sm p-10 rounded-3xl border-l-4 border-yellow-200 hover:border-l-8 transition-all duration-500">
                 <h3 class="text-4xl font-bold mb-6 gold-text">OUR FOOD</h3>
@@ -1028,7 +1028,7 @@
             <div class="relative">
               <div class="absolute -top-8 -right-8 text-[120px] font-bold text-yellow-400/10">02</div>
               <div
-                class="relative bg-black/70 backdrop-blur-sm p-10 rounded-3xl border-r-4 border-yellow-200 hover:border-r-8 transition-all duration-500">
+                class="relative bg-black/70 backdrop-blur-sm p-10 rounded-3xl border-r-4 border-orange-300 hover:border-r-8 transition-all duration-500">
                 <h3 class="text-4xl font-bold mb-6 gold-text">OUR DRINKS</h3>
                 <div class="w-20 h-1 bg-orange-200 mb-6"></div>
                 <p class="text-lg leading-relaxed mb-6 text-gray-300">
@@ -1176,7 +1176,7 @@
     <div class="footer-content">
       <div class="container mx-auto pl-14 py-6">
         <!-- Main Footer Content -->
-        <div class="footer-grid grid md:grid-cols-5 gap-6">
+        <div class="footer-grid grid md:grid-cols-5 gap-8">
           <!-- About Us Section -->
           <div class="footer-section">
             <h3>About Us</h3>
@@ -1339,12 +1339,6 @@
           this.style.transform = '';
         }, 150);
         
-        // Action based on button text
-        if (this.textContent.includes('Book Now')) {
-          alert('Redirecting to booking system...');
-        } else if (this.textContent.includes('Order Online')) {
-          alert('Redirecting to online ordering...');
-        }
       });
     });
 
