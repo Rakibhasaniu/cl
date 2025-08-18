@@ -436,7 +436,12 @@
       color: rgba(255, 255, 255, 0.8);
       font-size: 0.9rem;
     }
-
+   .gy img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
     
     
 
@@ -519,9 +524,7 @@
     <div class="text-center">
       <h1 class="text-5xl md:text-6xl font-bold pt-[80px] mt-8">CONTACT US</h1>
       <div class="w-24 h-1 gold-bg mx-auto"></div>
-      <svg class="w-6 h-6 text-white mx-auto mt-8 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-      </svg>
+      
     </div>
   </section>
 
@@ -539,7 +542,7 @@
       <div class="grid lg:grid-cols-2 gap-12">
         <!-- Restaurant Information -->
         <div class="section-bg p-8 rounded-lg">
-          <div class="text-center mb-8">
+          <div class=" gy text-center mb-8">
             <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop"
               alt="Calcutta Restaurant" class="w-full h-64 object-cover rounded-lg mb-6">
             <h3 class="text-3xl font-bold gold-text mb-2">Calcutta Fine Indian Dine</h3>
@@ -599,9 +602,6 @@
             </div>
           </div>
 
-          <button
-            class="w-full gold-bg text-black py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">VISIT
-            US</button>
         </div>
 
         <!-- Contact Form -->

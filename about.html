@@ -15,7 +15,7 @@
     }
 
     body {
-     font-family: sans-serif;
+      font-family: sans-serif;
       background: #0a0a0a;
       min-height: 100vh;
       color: #fff;
@@ -194,6 +194,13 @@
     .action-buttons {
       display: flex;
       gap: 1rem;
+    }
+
+    .story-image:hover img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
     }
 
     .btn {
@@ -384,7 +391,7 @@
       height: 60vh;
       min-height: 400px;
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                  url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&h=1080&fit=crop') center/cover;
+        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&h=1080&fit=crop') center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -406,7 +413,7 @@
       margin-bottom: 2rem;
     }
 
-    
+
 
     .story-image {
       border-radius: 15px;
@@ -562,6 +569,7 @@
     .parallax-element {
       transition: transform 0.1s ease-out;
     }
+
     .footer-modern {
       background: linear-gradient(135deg, #4c5f46 0%, #6b7b60 100%);
       color: #ffffff;
@@ -576,7 +584,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      
+
     }
 
     .footer-content {
@@ -586,18 +594,20 @@
 
     .footer-divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
       margin: 1rem 0;
     }
 
-     .footer-section h3 {
+    .footer-section h3 {
       color: #d1a971;
       font-size: 1.125rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
       letter-spacing: 0.5px;
     }
-    .footer-section p, .footer-section span {
+
+    .footer-section p,
+    .footer-section span {
       color: rgba(255, 255, 255, 0.9);
       font-size: 0.90rem;
       line-height: 1.5;
@@ -646,8 +656,8 @@
       font-size: 0.9rem;
     }
 
-    
-    
+
+
 
     @media (max-width: 768px) {
       .footer-grid {
@@ -750,26 +760,32 @@
       <div class="grid md:grid-cols-2 gap-12 items-center mb-16 fade-in-up">
         <div>
           <p class="story-text">
-            The Calcutta Fine Indian Dine story has very humble beginnings with a group of family members wanting to open an intimate Indian restaurant in Charlton Village, in Bromley, Kent in <span class="">1989</span>.
+            The Calcutta Fine Indian Dine story has very humble beginnings with a group of family members wanting to
+            open an intimate Indian restaurant in Charlton Village, in Bromley, Kent in <span class="">1989</span>.
           </p>
           <p class="story-text">
-            Little did they know at what extent the locals would welcome them with open arms, taking the establishment's delicious cooking, it's warm and friendly environment and personal service to their hearts. The restaurant was such a success that its proven track record made the owners take another bold step by moving the restaurant to a much larger premises a mere stone's throw away, <span class="story-highlight">2002</span>.
+            Little did they know at what extent the locals would welcome them with open arms, taking the establishment's
+            delicious cooking, it's warm and friendly environment and personal service to their hearts. The restaurant
+            was such a success that its proven track record made the owners take another bold step by moving the
+            restaurant to a much larger premises a mere stone's throw away, <span class="story-highlight">2002</span>.
           </p>
-          
+
         </div>
-        <div class="story-image fade-in-up">
+        <div class=" gy story-image fade-in-up">
           <img src="./assets/aviv-rachmadian-0WBw8AnR_dk-unsplash.jpg" alt="Restaurant ambiance with wine">
         </div>
       </div>
 
       <!-- Second Story Block -->
       <div class="grid md:grid-cols-2 gap-12 items-center mb-16 fade-in-up">
-        <div class="story-image order-2 md:order-1 fade-in-up">
+        <div class="gy story-image order-2 md:order-1 fade-in-up">
           <img src="./assets/steptodown.com361514.jpg" alt="Restaurant interior dining area">
         </div>
         <div class="order-1 md:order-2">
           <p class="story-text">
-            With Calcutta Fine Indian Dine becoming such a celebrated household name for food lovers, the next surprise when in <span class="story-highlight">2006</span> came the opening of Calcutta Fine Indian Dine Welling. The restaurant went from strength to strength and even went on to win a string of awards.
+            With Calcutta Fine Indian Dine becoming such a celebrated household name for food lovers, the next surprise
+            when in <span class="story-highlight">2006</span> came the opening of Calcutta Fine Indian Dine Welling. The
+            restaurant went from strength to strength and even went on to win a string of awards.
           </p>
           <p class="story-text story-highlight">
             The rest as they say is history and yet for the Calcutta Fine Indian Dine Group, the best was yet to come!
@@ -779,11 +795,16 @@
 
       <!-- Third Story Block -->
       <div class="max-w-4xl mx-auto text-center mb-16 fade-in-up">
-        <div class="story-image mb-8">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=400&fit=crop" alt="Fine dining restaurant interior">
+        <div class=" gy story-image mb-8">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=400&fit=crop"
+            alt="Fine dining restaurant interior">
         </div>
         <p class="story-text">
-          In 2011, Calcutta Fine Indian Dine launched its most ambitious restaurant to date, the 300-cover Calcutta Fine Indian Dine at Spinning Wheel, in Westerham and what has become its flagship restaurant. A brand for comfort, relaxation, flavoursome food, refreshing cocktails and fine dining from a menu that is contemporary whilst paying homage to tradition. Calcutta Fine Indian Dine has proudly been providing excellent service to a county appreciatively known as the Garden of England.
+          In 2011, Calcutta Fine Indian Dine launched its most ambitious restaurant to date, the 300-cover Calcutta Fine
+          Indian Dine at Spinning Wheel, in Westerham and what has become its flagship restaurant. A brand for comfort,
+          relaxation, flavoursome food, refreshing cocktails and fine dining from a menu that is contemporary whilst
+          paying homage to tradition. Calcutta Fine Indian Dine has proudly been providing excellent service to a county
+          appreciatively known as the Garden of England.
         </p>
       </div>
     </div>
@@ -804,7 +825,8 @@
           <div class="offer-badge">20% OFF</div>
           <h3 class="offer-title">Early Bird Special</h3>
           <p class="offer-description">
-            Enjoy 20% off your total bill when dining with us Monday to Thursday before 6:30 PM. Perfect for intimate dinners and family gatherings.
+            Enjoy 20% off your total bill when dining with us Monday to Thursday before 6:30 PM. Perfect for intimate
+            dinners and family gatherings.
           </p>
           <p class="text-sm text-gray-400 mb-4">Valid until March 31st, 2025</p>
           <button class="offer-button">Reserve Now</button>
@@ -815,7 +837,8 @@
           <div class="offer-badge">EXCLUSIVE</div>
           <h3 class="offer-title">Weekend Tasting Menu</h3>
           <p class="offer-description">
-            Experience our chef's 7-course tasting menu featuring seasonal ingredients and signature dishes, paired with premium wines.
+            Experience our chef's 7-course tasting menu featuring seasonal ingredients and signature dishes, paired with
+            premium wines.
           </p>
           <p class="text-sm text-gray-400 mb-4">Available Friday & Saturday evenings</p>
           <button class="offer-button">Book Experience</button>
@@ -826,7 +849,8 @@
           <div class="offer-badge">GROUPS</div>
           <h3 class="offer-title">Celebration Package</h3>
           <p class="offer-description">
-            Special group dining packages for birthdays, anniversaries, and corporate events. Includes welcome drinks and personalized service.
+            Special group dining packages for birthdays, anniversaries, and corporate events. Includes welcome drinks
+            and personalized service.
           </p>
           <p class="text-sm text-gray-400 mb-4">Groups of 8 or more</p>
           <button class="offer-button">Enquire Today</button>
@@ -840,7 +864,8 @@
           <div class="offer-badge">LUNCH</div>
           <h3 class="offer-title">Business Lunch Menu</h3>
           <p class="offer-description">
-            Two-course business lunch menu available Monday to Friday. Perfect for client meetings and networking lunches.
+            Two-course business lunch menu available Monday to Friday. Perfect for client meetings and networking
+            lunches.
           </p>
           <p class="text-sm text-gray-400 mb-4">£24.95 per person</p>
           <button class="offer-button">View Menu</button>
@@ -861,7 +886,7 @@
   </section>
 
   <!-- Footer -->
- <footer class="footer-modern" style="background: #0f1d22;">
+  <footer class="footer-modern" style="background: #0f1d22;">
     <div class="footer-content">
       <div class="container mx-auto pl-14 py-6">
         <!-- Main Footer Content -->
@@ -870,7 +895,7 @@
           <div class="footer-section">
             <h3>About Us</h3>
             <p>Our restaurant is located in the heart of the </p>
-              <p> city,offering a unique dining experience.</p>
+            <p> city,offering a unique dining experience.</p>
           </div>
 
           <!-- Our Location Section -->
@@ -906,27 +931,30 @@
             </div>
           </div>
           <div class="mt-6">
-              <h4 class="text-white font-semibold mb-3">Our Social Media</h4>
-              <div class="social-icons">
-                <a href="#" class="social-icon">
-                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </a>
-                <a href="#" class="social-icon">
-                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                  </svg>
-                </a>
-                <a href="#" class="social-icon">
-                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                  </svg>
-                </a>
-              </div>
+            <h4 class="text-white font-semibold mb-3">Our Social Media</h4>
+            <div class="social-icons">
+              <a href="#" class="social-icon">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </a>
+              <a href="#" class="social-icon">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                </svg>
+              </a>
+              <a href="#" class="social-icon">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
             </div>
+          </div>
         </div>
-        
+
 
         <!-- Footer Divider -->
         <div class="footer-divider"></div>
@@ -945,10 +973,10 @@
     const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
     const actionButtons = document.getElementById('actionButtons');
 
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', function () {
       menuToggle.classList.toggle('active');
       mobileMenuOverlay.classList.toggle('active');
-      
+
       // Hide/show action buttons on mobile
       if (window.innerWidth <= 768) {
         actionButtons.classList.toggle('hidden');
@@ -963,10 +991,10 @@
     // Close menu when clicking on a link (mobile)
     const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
     mobileLinks.forEach(link => {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function () {
         menuToggle.classList.remove('active');
         mobileMenuOverlay.classList.remove('active');
-        
+
         // Show action buttons again on mobile
         if (window.innerWidth <= 768) {
           actionButtons.classList.remove('hidden');
@@ -975,11 +1003,11 @@
     });
 
     // Close menu when clicking outside content area
-    mobileMenuOverlay.addEventListener('click', function(e) {
+    mobileMenuOverlay.addEventListener('click', function (e) {
       if (e.target === mobileMenuOverlay) {
         menuToggle.classList.remove('active');
         mobileMenuOverlay.classList.remove('active');
-        
+
         // Show action buttons again on mobile
         if (window.innerWidth <= 768) {
           actionButtons.classList.remove('hidden');
@@ -990,21 +1018,21 @@
     // Button click handlers
     const buttons = document.querySelectorAll('.btn, .offer-button');
     buttons.forEach(button => {
-      button.addEventListener('click', function(e) {
+      button.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         // Visual feedback
         this.style.transform = 'scale(0.95)';
         setTimeout(() => {
           this.style.transform = '';
         }, 150);
-        
-        
+
+
       });
     });
 
     // Handle window resize
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
       if (window.innerWidth > 768) {
         menuToggle.classList.remove('active');
         mobileMenuOverlay.classList.remove('active');
@@ -1059,7 +1087,7 @@
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
       const parallaxElements = document.querySelectorAll('.geometric-shape');
-      
+
       parallaxElements.forEach((element, index) => {
         const speed = (index % 2 === 0) ? 0.5 : -0.3;
         const yPos = -(scrolled * speed);
@@ -1070,7 +1098,7 @@
     // Add loading animation
     window.addEventListener('load', () => {
       document.body.style.opacity = '1';
-      
+
       // Animate hero elements
       setTimeout(() => {
         document.querySelectorAll('.fade-in-up').forEach((el, index) => {
@@ -1086,11 +1114,11 @@
 
     // Enhanced hover effects for offer cards
     document.querySelectorAll('.offer-card').forEach(card => {
-      card.addEventListener('mouseenter', function() {
+      card.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-15px) scale(1.02)';
       });
-      
-      card.addEventListener('mouseleave', function() {
+
+      card.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0) scale(1)';
       });
     });

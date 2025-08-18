@@ -335,6 +335,156 @@
       text-align: center;
     }
 
+    /* Details Popup Styles */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .popup-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popup-content {
+      background: white;
+      border-radius: 8px;
+      max-width: 400px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .popup-overlay.active .popup-content {
+      transform: scale(1);
+    }
+
+    .popup-header {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-bottom: 1px solid #e0e0e0;
+      position: relative;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #666;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.3s ease;
+    }
+
+    .popup-close:hover {
+      color: #333;
+    }
+
+    .popup-body {
+      padding: 1.5rem;
+      color: #333;
+    }
+
+    .popup-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    .popup-subtitle {
+      font-size: 0.9rem;
+      color: #999;
+      margin-bottom: 1rem;
+    }
+
+    .popup-description {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .popup-terms {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .popup-footer {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .popup-btn {
+      padding: 0.7rem 1.2rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .popup-btn-close {
+      background: #e0e0e0;
+      color: #666;
+    }
+
+    .popup-btn-close:hover {
+      background: #d0d0d0;
+      color: #333;
+    }
+
+    .popup-btn-price {
+      background: #c49c5e;
+      color: white;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .popup-btn-price:hover {
+      background: #b8925a;
+    }
+
+    .popup-btn-buy {
+      background: #d4af37;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .popup-btn-buy:hover {
+      background: #c49c2e;
+    }
+
     .footer-modern {
       background: linear-gradient(135deg, #4c5f46 0%, #6b7b60 100%);
       color: #ffffff;
@@ -538,6 +688,26 @@
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
       }
+
+      /* Popup mobile adjustments */
+      .popup-content {
+        width: 95%;
+        margin: 1rem;
+      }
+
+      .popup-body {
+        padding: 1rem;
+      }
+
+      .popup-footer {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .popup-btn {
+        width: 100%;
+        padding: 0.8rem;
+      }
     }
 
     /* Extra small devices */
@@ -644,6 +814,35 @@
     </div>
   </div>
 
+  <!-- Details Popup -->
+  <div class="popup-overlay" id="detailsPopup">
+    <div class="popup-content">
+      <div class="popup-header">
+        <button class="popup-close" id="popupClose">×</button>
+      </div>
+      <div class="popup-body">
+        <div class="popup-title">Gift vouchers up to £100</div>
+        <div class="popup-subtitle">Valid for 12 months</div>
+        
+        <div class="popup-description">
+          Treat yourself to delicious Indian cuisine at a Shampan restaurant near you.<br><br>
+          Enjoy exceptional food; a delicate blend of flavours brought together into beautifully presented dishes.
+        </div>
+        
+        <div class="popup-terms">
+          This voucher may be used in full or part payment for services offered at Shampan Bromley, Shampan Welling or Shampan Westerham. Booking recommended. Please inform us of any dietary requirements.
+        </div>
+        
+        <div class="popup-footer">
+          <button class="popup-btn popup-btn-close" id="popupCloseBtn">CLOSE</button>
+          <button class="popup-btn popup-btn-price" id="popupPriceBtn">
+            £60 ▼
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Main Content -->
   <div class="pt-20 min-h-screen">
     <!-- Gift Voucher Hero Section -->
@@ -744,7 +943,7 @@
                     </div>
                   </div>
                   
-                  <button class="flex-1  bg-[#bfa056] py-2  md:px-4 rounded text-xs md:text-sm  transition-colors" style="color: #000;" id="buyNowBtn">BUY NOW></button>
+                  <button class="flex-1  bg-[#bfa056] py-2  md:px-4 rounded text-xs md:text-sm  transition-colors" style="color: #000;" id="buyNowBtn">BUY NOW</button>
                 </div>
               </div>
             </div>
@@ -915,10 +1114,20 @@
     const buyNowBtn = document.getElementById('buyNowBtn');
     const detailsBtn = document.getElementById('detailsBtn');
 
+    // Details popup elements
+    const detailsPopup = document.getElementById('detailsPopup');
+    const popupClose = document.getElementById('popupClose');
+    const popupCloseBtn = document.getElementById('popupCloseBtn');
+    const popupPriceBtn = document.getElementById('popupPriceBtn');
+    const popupBuyBtn = document.getElementById('popupBuyBtn');
+
     // Update price display when dropdown changes
     priceDropdown.addEventListener('change', function() {
       const selectedValue = this.value;
       selectedPriceDisplay.textContent = `£${selectedValue}`;
+      
+      // Update popup price button
+      popupPriceBtn.textContent = `£${selectedValue} ▼`;
       
       // Add a subtle animation to the price display
       selectedPriceDisplay.style.transform = 'scale(1.1)';
@@ -932,10 +1141,52 @@
 
     // Initialize with default selected value
     selectedPriceDisplay.textContent = `£${priceDropdown.value}`;
+    popupPriceBtn.textContent = `£${priceDropdown.value} ▼`;
 
+    // Details button click handler
+    detailsBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      detailsPopup.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
 
+    // Close popup handlers
+    function closePopup() {
+      detailsPopup.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+    }
 
-   
+    popupClose.addEventListener('click', closePopup);
+    popupCloseBtn.addEventListener('click', closePopup);
+
+    // Close popup when clicking on overlay
+    detailsPopup.addEventListener('click', function(e) {
+      if (e.target === detailsPopup) {
+        closePopup();
+      }
+    });
+
+    // Close popup with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && detailsPopup.classList.contains('active')) {
+        closePopup();
+      }
+    });
+
+    // Popup price button handler (could open price dropdown or do nothing)
+    popupPriceBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      // You could add functionality here to change price within popup
+      console.log('Price button clicked in popup');
+    });
+
+    // Popup buy button handler
+    popupBuyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      closePopup();
+      // You could redirect to purchase page or trigger buy action
+      console.log('Buy button clicked in popup');
+    });
 
     // Add scroll effect to navbar
     window.addEventListener('scroll', () => {
