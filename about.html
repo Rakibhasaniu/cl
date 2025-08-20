@@ -197,12 +197,12 @@
       gap: 1rem;
     }
 
-    .story-image:hover img {
+    /* .story-image:hover img {
       width: 100%;
       height: 250px;
       object-fit: cover;
       transition: transform 0.3s ease;
-    }
+    } */
 
     .btn {
       padding: 0.7rem 1.5rem;
@@ -630,7 +630,12 @@
       gap: 1rem;
       margin-top: 1rem;
     }
-
+.gy img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
     .social-icon {
       width: 40px;
       height: 40px;
@@ -1120,25 +1125,9 @@
       });
     });
 
-    // Add subtle animation to story images on scroll
-    const storyImages = document.querySelectorAll('.story-image');
-    const imageObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.transform = 'translateY(0) rotate(0deg)';
-          entry.target.style.opacity = '1';
-        }
-      });
-    }, {
-      threshold: 0.3
-    });
+   
 
-    storyImages.forEach(img => {
-      img.style.transform = 'translateY(30px) rotate(2deg)';
-      img.style.opacity = '0';
-      img.style.transition = 'all 0.8s ease';
-      imageObserver.observe(img);
-    });
+  
   </script>
 </body>
 
